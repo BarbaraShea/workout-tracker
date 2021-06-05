@@ -3,9 +3,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const workoutsSchema = new Schema({
+    day: {
+      type: Date,
+      default: Date.now
+      },
     type: {
       type: String,
-      trim: true,
+      enum: ["resistance", "cardio"],
       required: true
     },
     name: {
